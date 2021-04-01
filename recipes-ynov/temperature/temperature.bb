@@ -3,6 +3,7 @@ LIC_FILES_CHKSUM = "file://${COREBASE}/meta/COPYING.MIT;md5=3da9cfbcb788c80a0384
 
 SRC_URI = " \
  git://github.com/csarraud/temperature;protocol=https \
+ file://temperature.service \
 "
 
 PV = "1.0+git${SRCPV}"
