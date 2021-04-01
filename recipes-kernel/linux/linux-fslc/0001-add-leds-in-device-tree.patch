@@ -1,0 +1,97 @@
+From 6bc6e4cd476c3154d5c2755edf974cb9c4b4d23f Mon Sep 17 00:00:00 2001
+From: csarraud <clementsarraud@gmail.com>
+Date: Thu, 25 Mar 2021 15:24:08 +0000
+Subject: [PATCH] add leds in device-tree
+
+Signed-off-by: csarraud <clementsarraud@gmail.com>
+---
+ arch/arm/boot/dts/imx7s-warp.dts | 60 ++++++++++++++++++++++++++++++--
+ 1 file changed, 58 insertions(+), 2 deletions(-)
+
+diff --git a/arch/arm/boot/dts/imx7s-warp.dts b/arch/arm/boot/dts/imx7s-warp.dts
+index d6b4888fa686..d211901d797d 100644
+--- a/arch/arm/boot/dts/imx7s-warp.dts
++++ b/arch/arm/boot/dts/imx7s-warp.dts
+@@ -10,14 +10,63 @@
+ #include "imx7s.dtsi"
+ 
+ / {
+-	model = "Warp i.MX7 Board";
+-	compatible = "warp,imx7s-warp", "fsl,imx7s";
++	model = "Element14 Warp i.MX7 Board";
++	compatible = "element14,imx7s-warp", "fsl,imx7s";
++
++	chosen {
++		bootargs = "console=ttymxc0,115200 root=/dev/mmcblk1p2 oops=panic panic=5 rootwait rw";
++	};
+ 
+ 	memory@80000000 {
+ 		device_type = "memory";
+ 		reg = <0x80000000 0x20000000>;
+ 	};
+ 
++	leds {
++		compatible = "gpio-leds";
++		status = "okay";
++
++		d0 {
++			label = "d0";
++			gpios = <&mcp23s08 0 GPIO_ACTIVE_LOW>;
++		};
++
++		d1 {
++			label = "d1";
++			gpios = <&mcp23s08 1 GPIO_ACTIVE_LOW>;
++		};
++
++		d2 {
++			label = "d2";
++			gpios = <&mcp23s08 2 GPIO_ACTIVE_LOW>;
++		};
++
++		d3 {
++			label = "d3";
++			gpios = <&mcp23s08 3 GPIO_ACTIVE_LOW>;
++		};
++
++		d4 {
++			label = "d4";
++			gpios = <&mcp23s08 4 GPIO_ACTIVE_LOW>;
++		};
++
++		d5 {
++			label = "d5";
++			gpios = <&mcp23s08 5 GPIO_ACTIVE_LOW>;
++		};
++
++		d6 {
++			label = "d6";
++			gpios = <&mcp23s08 6 GPIO_ACTIVE_LOW>;
++		};
++
++		d7 {
++			label = "d7";
++			gpios = <&mcp23s08 7 GPIO_ACTIVE_LOW>;
++		};
++	};
++
+ 	gpio-keys {
+ 		compatible = "gpio-keys";
+ 		pinctrl-0 = <&pinctrl_gpio>;
+@@ -220,6 +269,13 @@
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&pinctrl_i2c3>;
+ 	status = "okay";
++
++	mcp23s08: mcp23s08@20{
++		compatible = "microchip,mcp23008";
++		gpio-controller;
++		#gpio-cells = <2>;
++		reg = <0x20>;
++	};
+ };
+ 
+ &i2c4 {
+-- 
+2.25.1
+

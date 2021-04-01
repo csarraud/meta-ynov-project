@@ -1,0 +1,1 @@
+DEPENDS_append = " u-boot-scr"

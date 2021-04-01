@@ -1,0 +1,11 @@
+[Unit]
+Description=Temperature display with LED
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/temperature
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
