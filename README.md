@@ -235,6 +235,14 @@ Arborescence créee :
         └── temperature.c
 
 
+Dans *temperature.bb*, nous avons rajouté ceci, qui va chercher le repository et effectuer le CMakeLists.txt du repository : 
+
+      SRC_URI = " \
+      git://github.com/csarraud/temperature;protocol=https \
+      file://temperature.service \
+      "
+
+
 ### 4. Compilation et déploiement sur la cible 
 
 Dans *local.conf*, nous avons modifié la variable : 
