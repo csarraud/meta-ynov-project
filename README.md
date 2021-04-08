@@ -235,7 +235,7 @@ Arborescence créee :
         └── temperature.c
 
 
-Dans *temperature.bb*, nous avons rajouté ceci, qui va chercher le repository et effectuer le CMakeLists.txt du repository : 
+Dans *temperature.bb*, nous avons rajouté cette variable, qui va chercher le repository et effectuer le CMakeLists.txt du repository : 
 
       SRC_URI = " \
       git://github.com/csarraud/temperature;protocol=https \
