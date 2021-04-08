@@ -222,7 +222,7 @@ Dans *devtool edit-recipe temperature*, nous avons modifié les variables suivan
 - SYSTEMD_SERVICE_${PN} = "temperature.service"
 - SYSTEMD_AUTO_ENABLE = "enable"
 
-### 3.  Implémentation et utilisation du repository GitHub
+### 3.  Implémenté et utilisé le repository GitHub
 
 Lien du repository : https://github.com/csarraud/temperature
 
@@ -243,7 +243,7 @@ Dans *temperature.bb*, nous avons rajouté ceci, qui va chercher le repository e
       "
 
 
-### 4. Compilation et déploiement sur la cible 
+### 4. Compilé et déployé sur la cible 
 
 Dans *local.conf*, nous avons modifié la variable : 
 
