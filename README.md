@@ -71,9 +71,9 @@ Pour obtenir la température, puis le scale envoyée par le capteur, nous avons 
 
 Pour obtenir la température actuelle nous avons fait la multiplication de ces deux valeurs reçues. 
 
-*Aucune LED allumée -> 27°C   
-Toutes les LEDS allumées -> 35°C  
-1 LED allumée -> +1°C*
+*Aucune LED allumée -> 28°C   
+Toutes les LEDS allumées -> 42°C  
+1 LED allumée -> +2°C*
 
 ### 2. Application et code en C : temperature.c
 
